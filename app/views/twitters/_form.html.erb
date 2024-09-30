@@ -1,0 +1,37 @@
+<%= form_with(model: twitter) do |form| %>
+  <% if twitter.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(twitter.errors.count, "error") %> prohibited this twitter from being saved:</h2>
+
+      <ul>
+        <% twitter.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :avatar, style: "display: block" %>
+    <%= form.text_field :avatar, class: "form-control", placeholder: "https://cdn.pixabay.com/photo/2024/03/07/10/38/simba-8618301_1280.jpg" %>
+  </div>
+
+  <div>
+    <%= form.label :username, style: "display: block" %>
+    <%= form.text_field :username, class: "form-control"  %>
+  </div>
+
+  <div>
+    <%= form.label :tweet, style: "display: block" %>
+    <%= form.text_area :tweet, class: "form-control", rows: 5 %>
+  </div>
+
+  <div>
+    <%= form.label :email, style: "display: block" %>
+    <%= form.text_field :email, class: "form-control"  %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

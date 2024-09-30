@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Twitters" %>
+
+
+
+<div id="twitters">
+  <% @twitters.each do |twitter| %>
+    <%= render twitter %>
+    <p>
+      <%= link_to "Show this Twitter", twitter, class: "btn btn-primary" %>
+      
+    </p>
+  <% end %>
+</div>
+
+
+<%= link_to "New Twitter", new_twitter_path, class: "btn btn-primary" %>

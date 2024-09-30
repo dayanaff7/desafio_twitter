@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @twitter %>
+
+<div>
+  <%= link_to "Editar", edit_twitter_path(@twitter), class: "btn btn-primary" %>
+  <%= link_to "Volver", twitters_path, class: "btn btn-primary" %>
+  <%= link_to "Eliminar", @twitter, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary" %>
+
+</div>
